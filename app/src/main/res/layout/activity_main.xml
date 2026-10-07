@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".UI.MainActivity">
 
-    <!--  title text   -->
+    <!--  title text    -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
