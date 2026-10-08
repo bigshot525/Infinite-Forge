@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InfiniteForge">
         <activity
-            android:name=".UI.Signup"
+            android:name=".UI.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,10 +21,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.MainActivity"
+            android:name=".UI.Signup"
             android:exported="false" />
         <activity
-            android:name=".UI.Login"
+            android:name=".UI.MainActivity"
             android:exported="false" />
     </application>
 
