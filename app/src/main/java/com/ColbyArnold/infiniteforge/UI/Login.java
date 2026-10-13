@@ -81,9 +81,10 @@ public class Login extends AppCompatActivity {
                     if (documentSnapshot.exists()) {
                         Toast.makeText(Login.this, "Welcome back, " + username + "!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(Login.this, MainActivity.class);
+                        intent.putExtra("username", username);
                         startActivity(intent);
                         finish();
-                    } else {
+                    }else {
                         btnLogin.setEnabled(true);
                         Toast.makeText(Login.this, "User not found", Toast.LENGTH_SHORT).show();
                     }

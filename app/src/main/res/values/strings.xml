@@ -10,8 +10,16 @@
     <string name="login">Log In</string>
     <string name="already_have_account">Already have an account? Log In</string>
     <string name="dont_have_account">Don\'t have an account? Sign Up</string>
+    <string name="home">Home</string>
     <string name="inventory">Inventory</string>
     <string name="merge">Merge</string>
     <string name="settings">Settings</string>
     <string name="go_to_battle">Go to Battle</string>
+    <string name="equipped_gear">Equipped Gear</string>
+    <string name="weapon_sample">⚔️ Weapon: Wooden Sword</string>
+    <string name="armor_sample">🛡️ Armor: Leather Vest</string>
+    <string name="helmet_sample">🪖 Helmet: None</string>
+    <string name="shield_sample">🛡️ Shield: None</string>
+    <string name="gold_sample">Gold: 100</string>
+    <string name="slots_sample">Slots: 8 / 20</string>
 </resources>

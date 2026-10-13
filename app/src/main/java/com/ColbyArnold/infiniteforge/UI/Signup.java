@@ -112,14 +112,44 @@ public class Signup extends AppCompatActivity {
         db.collection("users").document(username)
                 .set(userMap)
                 .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(Signup.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Signup.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                    createInitialInventory(username);
                 })
                 .addOnFailureListener(e -> {
                     btnSignup.setEnabled(true);
                     Toast.makeText(Signup.this, "Failed to create account: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 });
+    }
+
+    private void createInitialInventory(String username) {
+        // Starter item 1: Wooden Sword
+        Map<String, Object> item1 = new HashMap<>();
+        item1.put("name", "Wooden Sword");
+        item1.put("type", "Weapon");
+        item1.put("statBonus", 5);
+        item1.put("equipped", true);
+        item1.put("quantity", 1);
+        item1.put("path", "res/items/Wood_Sword.png");
+
+
+        // Starter item 2: Leather Vest
+        Map<String, Object> item2 = new HashMap<>();
+        item2.put("name", "Leather Vest");
+        item2.put("type", "Armor");
+        item2.put("statBonus", 3);
+        item2.put("equipped", true);
+        item2.put("quantity", 1);
+
+        db.collection("users").document(username).collection("inventory").document("wooden_sword").set(item1);
+        db.collection("users").document(username).collection("inventory").document("leather_vest").set(item2)
+                .addOnSuccessListener(aVoid -> finishSignup())
+                .addOnFailureListener(e -> finishSignup());
+    }
+
+    private void finishSignup() {
+        Toast.makeText(Signup.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Signup.this, MainActivity.class);
+        intent.putExtra("username", etUsername != null ? etUsername.getText().toString().trim() : "");
+        startActivity(intent);
+        finish();
     }
 }

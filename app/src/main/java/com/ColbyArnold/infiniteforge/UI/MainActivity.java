@@ -1,5 +1,6 @@
 package com.colbyarnold.infiniteforge.UI;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -47,11 +48,20 @@ public class MainActivity extends AppCompatActivity {
 
             bottomNav.setOnItemSelectedListener(item -> {
                 int itemId = item.getItemId();
-                if (itemId == R.id.navigation_inventory) {
+                if (itemId == R.id.navigation_home) {
+                    // Handle home navigation
                     return true;
+                } else if (itemId == R.id.navigation_inventory) {
+                Intent intent = new Intent(this, InventoryActivity.class);
+                intent.putExtra("username", getIntent().getStringExtra("username"));
+                startActivity(intent);
+                return true;
                 } else if (itemId == R.id.navigation_merge) {
+                    //take to merge screen
                     return true;
                 } else if (itemId == R.id.navigation_settings) {
+                    //take to settings
+
                     return true;
                 }
                 return false;
