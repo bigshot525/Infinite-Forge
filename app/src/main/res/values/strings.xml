@@ -10,4 +10,8 @@
     <string name="login">Log In</string>
     <string name="already_have_account">Already have an account? Log In</string>
     <string name="dont_have_account">Don\'t have an account? Sign Up</string>
+    <string name="inventory">Inventory</string>
+    <string name="merge">Merge</string>
+    <string name="settings">Settings</string>
+    <string name="go_to_battle">Go to Battle</string>
 </resources>
